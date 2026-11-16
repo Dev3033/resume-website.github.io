@@ -6,42 +6,48 @@
   <title>Dev Thakkar - Resume</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+
     /* ------------------------------
        my resume website stylesheet
        ------------------------------ */
 
-    /* smooth scroll when clicking nav links */
+    * {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
-    /* body and general text */
     body {
       margin: 0;
       padding: 0;
-      background-color: #faf6ee;   /* off white beige */
-      color: #2b2723;
+      background-color: #f5efe4;
+      color: #1e1a15;
       font-family: 'Inter', Arial, sans-serif;
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
     h1, h2, h3 {
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 600;
       margin: 0;
+      color: #1e1a15;
     }
 
     p { margin: 0 0 10px 0; }
 
     a {
-      color: #9a7b4f;
+      color: #a0763f;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    a:hover { text-decoration: underline; }
+    a:hover { color: #7a5a2e; }
 
     ul {
       list-style: none;
@@ -49,21 +55,28 @@
       padding: 0;
     }
 
+    ::selection {
+      background: #e5d9c4;
+      color: #1e1a15;
+    }
+
 
     /* ---------- navigation bar ---------- */
 
     .navbar {
-      position: sticky;          /* sticks to top when scrolling */
+      position: sticky;
       top: 0;
-      background-color: #ffffff;
-      border-bottom: 1px solid #e6dccb;
+      background: rgba(245, 239, 228, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5d9c4;
       z-index: 100;
     }
 
     .nav-inner {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -73,111 +86,176 @@
       font-family: 'Fraunces', Georgia, serif;
       font-size: 16px;
       font-weight: 600;
-      color: #2b2723;
+      letter-spacing: 0.3px;
     }
 
     .nav-links li {
       display: inline-block;
-      margin-left: 22px;
+      margin-left: 26px;
     }
 
     .nav-links a {
-      font-size: 14px;
-      color: #6d645a;
+      position: relative;
+      font-size: 13px;
+      color: #6b6055;
+      padding: 4px 0;
+    }
+
+    /* animated underline on hover */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1.5px;
+      background: #a0763f;
+      transition: width 0.25s ease;
     }
 
     .nav-links a:hover {
-      color: #9a7b4f;
-      text-decoration: none;
+      color: #1e1a15;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
 
-    /* ---------- header / hero ---------- */
+    /* ---------- hero ---------- */
 
-    .header {
-      max-width: 860px;
+    .hero {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 70px 20px 50px 20px;
+      padding: 80px 24px 70px;
       text-align: center;
     }
 
-    .small-heading {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #9a7b4f;
-      margin-bottom: 14px;
-    }
-
-    .header h1 {
-      font-size: 44px;
-      line-height: 1.15;
-    }
-
-    .tagline {
-      max-width: 540px;
-      margin: 16px auto 0 auto;
-      font-weight: 300;
-      font-size: 17px;
-      color: #6d645a;
-    }
-
-    .contact-links {
-      margin-top: 28px;
-      font-size: 14px;
-      color: #6d645a;
-    }
-
-    .contact-links li {
-      display: inline-block;
-      margin: 5px 12px;
-    }
-
-    .contact-links a { color: #2b2723; }
-
-    .contact-links a:hover {
-      color: #9a7b4f;
-      text-decoration: none;
-    }
-
-    .contact-links-left {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-
-    /* ---------- sections ---------- */
-
-    .section {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 50px 20px;
-      border-bottom: 1px solid #e6dccb;
-      scroll-margin-top: 70px;   /* so nav bar doesn't cover heading */
-    }
-
-    .section:last-of-type { border-bottom: none; }
-
-    .section h2 {
-      font-size: 24px;
-      display: flex;
+    .monogram {
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 28px;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border: 1.5px solid #a0763f;
+      border-radius: 50%;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #a0763f;
+      margin-bottom: 26px;
     }
 
-    /* small brown bar before each section heading */
-    .section h2::before {
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #a0763f;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
       content: "";
       display: inline-block;
-      width: 4px;
-      height: 22px;
-      background-color: #9a7b4f;
-      margin-right: 12px;
-      border-radius: 2px;
+      width: 24px;
+      height: 1px;
+      background: #a0763f;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.08;
+      letter-spacing: -1.2px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero .tagline {
+      max-width: 580px;
+      margin: 22px auto 0;
+      font-size: 17px;
+      font-weight: 300;
+      color: #6b6055;
+    }
+
+    .hero-contact {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-contact a {
+      display: inline-block;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: #1e1a15;
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+
+    .hero-contact a:hover {
+      border-color: #a0763f;
+      color: #a0763f;
+      transform: translateY(-1px);
+    }
+
+    /* soft entrance animation for hero items */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero > * {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero > *:nth-child(2) { animation-delay: 0.10s; }
+    .hero > *:nth-child(3) { animation-delay: 0.18s; }
+    .hero > *:nth-child(4) { animation-delay: 0.26s; }
+    .hero > *:nth-child(5) { animation-delay: 0.34s; }
+
+
+    /* ---------- main + sections ---------- */
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 60px 0;
+      border-top: 1px solid #e5d9c4;
+      scroll-margin-top: 70px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .section h2 .num {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #a0763f;
     }
 
     .grey-text {
-      color: #6d645a;
+      color: #6b6055;
       font-size: 15px;
     }
 
@@ -185,12 +263,17 @@
     /* ---------- education ---------- */
 
     .edu-box {
-      background-color: #ffffff;
-      border: 1px solid #e6dccb;
-      border-left: 3px solid #9a7b4f;
-      border-radius: 8px;
-      padding: 20px 24px;
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
+      border-left: 3px solid #a0763f;
+      border-radius: 4px 12px 12px 4px;
+      padding: 24px 26px 22px;
       margin-bottom: 16px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .edu-box:hover {
+      box-shadow: 0 8px 20px rgba(30, 26, 21, 0.05);
     }
 
     .edu-top {
@@ -198,137 +281,215 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: baseline;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
 
-    .edu-top h3 { font-size: 18px; }
+    .edu-top h3 { font-size: 19px; }
 
     .pill {
       display: inline-block;
-      background-color: #f1e8d9;
-      color: #9a7b4f;
+      background: #f1e8d9;
+      color: #a0763f;
       font-size: 11px;
-      text-transform: uppercase;
+      font-weight: 500;
       letter-spacing: 1px;
+      text-transform: uppercase;
       padding: 4px 10px;
       border-radius: 20px;
-      font-weight: 500;
+      white-space: nowrap;
     }
 
 
-    /* ---------- skills cards ---------- */
+    /* ---------- skills grid ---------- */
 
     .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
 
     .card {
-      background-color: #ffffff;
-      border: 1px solid #e6dccb;
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
       border-radius: 12px;
-      padding: 22px 22px;
-      width: 31%;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(43, 39, 35, 0.03);
-      transition: box-shadow 0.2s, transform 0.2s;
+      padding: 22px;
+      transition: all 0.25s ease;
     }
 
     .card:hover {
-      box-shadow: 0 8px 20px rgba(43, 39, 35, 0.08);
-      transform: translateY(-2px);
+      border-color: #d4c4a5;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(30, 26, 21, 0.06);
     }
 
     .card h3 {
       font-family: 'Inter', Arial, sans-serif;
       font-size: 12px;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 1.5px;
-      color: #9a7b4f;
+      text-transform: uppercase;
+      color: #a0763f;
       margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1e8d9;
     }
 
     .tag {
       display: inline-block;
-      background-color: #f1e8d9;
+      background: #f1e8d9;
       font-size: 13px;
       padding: 5px 11px;
       border-radius: 20px;
       margin: 0 5px 6px 0;
+      color: #1e1a15;
     }
 
 
-    /* ---------- contact card ---------- */
+    /* ---------- certification ---------- */
+
+    .cert-card {
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
+      border-radius: 12px;
+      padding: 26px 28px;
+    }
+
+    .cert-card h3 {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+
+    /* ---------- contact ---------- */
 
     .contact-box {
-      background-color: #ffffff;
-      border: 1px solid #e6dccb;
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
       border-radius: 12px;
-      padding: 28px 30px;
+      padding: 34px 32px;
+      text-align: center;
     }
 
     .contact-box h3 {
-      font-size: 18px;
+      font-size: 22px;
       margin-bottom: 8px;
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-chips a {
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 14px;
+      color: #1e1a15;
+      background: #f5efe4;
+      border: 1px solid #e5d9c4;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+
+    .contact-chips a:hover {
+      background: #a0763f;
+      border-color: #a0763f;
+      color: #ffffff;
+      transform: translateY(-1px);
     }
 
 
     /* ---------- footer ---------- */
 
     .footer {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 30px 20px 60px 20px;
+      max-width: 960px;
+      margin: 40px auto 0;
+      padding: 40px 24px 60px;
       text-align: center;
       font-size: 13px;
-      color: #6d645a;
-      border-top: 1px solid #e6dccb;
+      color: #6b6055;
+      border-top: 1px solid #e5d9c4;
     }
+
+    .footer p { margin: 0; }
 
 
     /* ---------- back to top button ---------- */
 
     .top-button {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+      right: 22px;
+      bottom: 22px;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
       text-align: center;
-      background-color: #ffffff;
-      border: 1px solid #e6dccb;
+      background: #fffdf9;
+      border: 1px solid #e5d9c4;
       border-radius: 50%;
-      color: #9a7b4f;
+      color: #a0763f;
       font-size: 16px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(43, 39, 35, 0.08);
+      box-shadow: 0 6px 16px rgba(30, 26, 21, 0.08);
+      transition: all 0.2s;
       z-index: 100;
     }
 
     .top-button:hover {
-      background-color: #f1e8d9;
-      text-decoration: none;
+      background: #a0763f;
+      color: #ffffff;
+      border-color: #a0763f;
     }
 
 
     /* ---------- mobile ---------- */
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
 
-      .nav-name { display: none; }
-      .nav-inner { justify-content: center; }
-      .nav-links li { margin: 0 10px; }
+      .nav-inner { padding: 12px 18px; }
+      .nav-name { font-size: 14px; }
+      .nav-links li { margin-left: 16px; }
+      .nav-links a { font-size: 12px; }
 
-      .header { padding: 45px 15px 30px 15px; }
-      .header h1 { font-size: 32px; }
-      .section { padding: 35px 15px; }
+      .hero { padding: 55px 20px 45px; }
 
-      .card { width: 100%; }
-      .contact-links li { margin: 4px 8px; }
-      .contact-box { padding: 22px 20px; }
+      .hero h1 {
+        font-size: 36px;
+        letter-spacing: -0.5px;
+      }
+
+      .hero .tagline { font-size: 15px; }
+
+      .monogram {
+        width: 54px;
+        height: 54px;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      main { padding: 0 20px; }
+
+      .section { padding: 45px 0; }
+      .section h2 { font-size: 22px; }
+
+      .contact-box { padding: 24px 20px; }
+
+      .top-button {
+        right: 14px;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .nav-links li { margin-left: 12px; }
+      .nav-links a  { font-size: 11px; }
     }
 
   </style>
@@ -348,170 +509,172 @@
     </div>
   </div>
 
-  <!-- header / hero -->
-  <div class="header" id="top">
-    <p class="small-heading">BBA Digital Business and Entrepreneurship - IIM Bangalore</p>
+  <!-- hero -->
+  <header class="hero">
+    <div class="monogram">DT</div>
+    <p class="eyebrow">IIM Bangalore · BBA DBE</p>
     <h1>Dev Maheshkumar Thakkar</h1>
     <p class="tagline">
-      First year student with an interest in marketing. I want to learn how
-      brands get people's attention and then keep their trust.
+      First-year student exploring marketing — learning how brands earn
+      attention, and then keep trust.
     </p>
-
-    <ul class="contact-links">
-      <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
-      <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
-      <li><a href="tel:+919429830145">+91 94298 30145</a></li>
+    <ul class="hero-contact">
+      <li><a href="mailto:dev.thakkar26@iimb.ac.in">Email</a></li>
       <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
       <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
-      <li>Patan, Gujarat</li>
+      <li><a href="tel:+919429830145">Phone</a></li>
     </ul>
-  </div>
+  </header>
 
-  <!-- about section -->
-  <div class="section" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am in my first year and first semester of the BBA in Digital Business
-      and Entrepreneurship at IIM Bangalore. Right now I am exploring marketing
-      as my main area of interest. I like that marketing is part storytelling
-      and part data - some brands are remembered and some are just scrolled past.
-    </p>
-    <p>
-      I am also doing a BAMS degree along with this programme, which keeps me
-      busy and has taught me to be disciplined. I am at the beginning of my
-      journey and I prefer to learn slowly and properly instead of claiming
-      things I have not done yet.
-    </p>
-  </div>
+  <main>
 
-  <!-- education section -->
-  <div class="section" id="education">
-    <h2>Education</h2>
-
-    <div class="edu-box">
-      <div class="edu-top">
-        <h3>BBA - Digital Business and Entrepreneurship</h3>
-        <span class="pill">Ongoing</span>
-      </div>
-      <p class="grey-text">Indian Institute of Management Bangalore, Batch 3</p>
-      <p class="grey-text">First year, first semester</p>
-    </div>
-
-    <div class="edu-box">
-      <div class="edu-top">
-        <h3>BAMS - Bachelor of Ayurvedic Medicine and Surgery</h3>
-        <span class="pill">Expected 2031</span>
-      </div>
-      <p class="grey-text">Ananya Medical</p>
-      <p class="grey-text">Doing this degree along with the BBA programme.</p>
-    </div>
-  </div>
-
-  <!-- skills section -->
-  <div class="section" id="skills">
-    <h2>Skills</h2>
-
-    <div class="skills">
-
-      <div class="card">
-        <h3>Marketing</h3>
-        <ul>
-          <li class="tag">Marketing basics</li>
-          <li class="tag">Social media</li>
-          <li class="tag">Consumer behaviour</li>
-          <li class="tag">Market research basics</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Tools</h3>
-        <ul>
-          <li class="tag">MS Excel</li>
-          <li class="tag">MS Word</li>
-          <li class="tag">MS PowerPoint</li>
-          <li class="tag">Canva</li>
-          <li class="tag">Google Workspace</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Technical</h3>
-        <ul>
-          <li class="tag">HTML (learning)</li>
-          <li class="tag">CSS (learning)</li>
-          <li class="tag">GitHub basics</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Soft Skills</h3>
-        <ul>
-          <li class="tag">Communication</li>
-          <li class="tag">Teamwork</li>
-          <li class="tag">Time management</li>
-          <li class="tag">Willing to learn</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Languages</h3>
-        <ul>
-          <li class="tag">English</li>
-          <li class="tag">Hindi</li>
-          <li class="tag">Gujarati</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Interests</h3>
-        <ul>
-          <li class="tag">Brands and marketing</li>
-          <li class="tag">Investing basics</li>
-          <li class="tag">Current affairs</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- certification section -->
-  <div class="section" id="certifications">
-    <h2>Certification</h2>
-
-    <div class="card" style="width: 100%;">
-      <h3>SEBI Investor Awareness Test</h3>
-      <p class="grey-text">Securities and Exchange Board of India</p>
+    <!-- about -->
+    <div class="section" id="about">
+      <h2><span class="num">01</span> About Me</h2>
       <p>
-        A test about the basics of the securities market and investor awareness.
+        I am in my first year and first semester of the BBA in Digital Business
+        and Entrepreneurship at IIM Bangalore. Right now I am exploring marketing
+        as my main area of interest. I like that marketing is part storytelling
+        and part data — some brands are remembered and some are just scrolled past.
+      </p>
+      <p>
+        I am also doing a BAMS degree along with this programme, which keeps me
+        busy and has taught me to be disciplined. I am at the beginning of my
+        journey and I prefer to learn slowly and properly instead of claiming
+        things I have not done yet.
       </p>
     </div>
-  </div>
 
-  <!-- contact section -->
-  <div class="section" id="contact">
-    <h2>Contact</h2>
+    <!-- education -->
+    <div class="section" id="education">
+      <h2><span class="num">02</span> Education</h2>
 
-    <div class="contact-box">
-      <h3>Let's get in touch</h3>
-      <p class="grey-text">The fastest way to reach me is email.</p>
+      <div class="edu-box">
+        <div class="edu-top">
+          <h3>BBA — Digital Business and Entrepreneurship</h3>
+          <span class="pill">Ongoing</span>
+        </div>
+        <p class="grey-text">Indian Institute of Management Bangalore, Batch 3</p>
+        <p class="grey-text">First year, first semester</p>
+      </div>
 
-      <ul class="contact-links contact-links-left">
-        <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
-        <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
-        <li><a href="tel:+919429830145">+91 94298 30145</a></li>
-        <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
-      </ul>
+      <div class="edu-box">
+        <div class="edu-top">
+          <h3>BAMS — Bachelor of Ayurvedic Medicine and Surgery</h3>
+          <span class="pill">Expected 2031</span>
+        </div>
+        <p class="grey-text">Ananya Medical</p>
+        <p class="grey-text">Doing this degree along with the BBA programme.</p>
+      </div>
     </div>
-  </div>
+
+    <!-- skills -->
+    <div class="section" id="skills">
+      <h2><span class="num">03</span> Skills</h2>
+
+      <div class="skills">
+
+        <div class="card">
+          <h3>Marketing</h3>
+          <ul>
+            <li class="tag">Marketing basics</li>
+            <li class="tag">Social media</li>
+            <li class="tag">Consumer behaviour</li>
+            <li class="tag">Market research</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Tools</h3>
+          <ul>
+            <li class="tag">MS Excel</li>
+            <li class="tag">MS Word</li>
+            <li class="tag">MS PowerPoint</li>
+            <li class="tag">Canva</li>
+            <li class="tag">Google Workspace</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Technical</h3>
+          <ul>
+            <li class="tag">HTML (learning)</li>
+            <li class="tag">CSS (learning)</li>
+            <li class="tag">GitHub basics</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li class="tag">Communication</li>
+            <li class="tag">Teamwork</li>
+            <li class="tag">Time management</li>
+            <li class="tag">Willing to learn</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Languages</h3>
+          <ul>
+            <li class="tag">English</li>
+            <li class="tag">Hindi</li>
+            <li class="tag">Gujarati</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Interests</h3>
+          <ul>
+            <li class="tag">Brands and marketing</li>
+            <li class="tag">Investing basics</li>
+            <li class="tag">Current affairs</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- certification -->
+    <div class="section" id="certifications">
+      <h2><span class="num">04</span> Certification</h2>
+
+      <div class="cert-card">
+        <h3>SEBI Investor Awareness Test</h3>
+        <p class="grey-text">Securities and Exchange Board of India</p>
+        <p>
+          A test about the basics of the securities market and investor awareness.
+        </p>
+      </div>
+    </div>
+
+    <!-- contact -->
+    <div class="section" id="contact">
+      <h2><span class="num">05</span> Contact</h2>
+
+      <div class="contact-box">
+        <h3>Let's get in touch</h3>
+        <p class="grey-text">The fastest way to reach me is email.</p>
+
+        <div class="contact-chips">
+          <a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a>
+          <a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a>
+          <a href="tel:+919429830145">+91 94298 30145</a>
+          <a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/Dev3033" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
 
   <!-- footer -->
   <div class="footer">
-    <p>Dev Maheshkumar Thakkar - Patan, Gujarat - Made with HTML and CSS</p>
+    <p>Dev Maheshkumar Thakkar · Patan, Gujarat · Built with HTML &amp; CSS</p>
   </div>
 
-  <!-- back to top button -->
-  <a href="#top" class="top-button">^</a>
+  <!-- back to top -->
+  <a href="#" class="top-button">↑</a>
 
 </body>
 </html>
