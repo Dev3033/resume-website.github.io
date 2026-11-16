@@ -7,4 +7,4 @@ Resume website built with HTML and CSS for the CSS module mini project.
 
 ## Files
 - `index.html` — page markup and styles
-- `sebi-certificate.pdf` — SEBI Investor Awareness Test certificate
+- `sebi certificate.pdf` — SEBI Investor Awareness Test certificate
