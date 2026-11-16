@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Thakkar - Resume</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS is written here inside the style tag -->
+  <style>
+
+    /* ------------------------------
+       my resume website stylesheet
+       ------------------------------ */
+
+    /* body and general text */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #faf6ee;   /* off white beige */
+      color: #2b2723;
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+    }
+
+    a {
+      color: #9a7b4f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* ---------- header part ---------- */
+
+    .header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 70px 20px 40px 20px;
+      text-align: center;
+      border-bottom: 1px solid #e6dccb;
+    }
+
+    .small-heading {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #9a7b4f;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 40px;
+    }
+
+    .tagline {
+      max-width: 520px;
+      margin: 15px auto 0 auto;
+      font-weight: 300;
+      font-size: 16px;
+      color: #6d645a;
+    }
+
+
+    /* ---------- contact links (using inline-block) ---------- */
+
+    .contact-links {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #6d645a;
+    }
+
+    .contact-links li {
+      display: inline-block;
+      margin: 5px 12px;
+    }
+
+    .contact-links a {
+      color: #2b2723;
+    }
+
+    .contact-links a:hover {
+      color: #9a7b4f;
+    }
+
+    /* this class moves the contact list to the left in the contact section */
+    .contact-links-left {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+
+    /* ---------- sections ---------- */
+
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      border-bottom: 1px solid #e6dccb;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #9a7b4f;
+    }
+
+    .grey-text {
+      color: #6d645a;
+      font-size: 15px;
+    }
+
+
+    /* ---------- education ---------- */
+
+    .edu-box {
+      margin-bottom: 25px;
+    }
+
+    .edu-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-top h3 {
+      font-size: 18px;
+    }
+
+    /* the small label like "Ongoing" */
+    .pill {
+      display: inline-block;
+      background-color: #f1e8d9;
+      color: #9a7b4f;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+
+    /* ---------- skills cards ---------- */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e6dccb;
+      border-radius: 12px;
+      padding: 18px 20px;
+      width: 31%;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #9a7b4f;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #f1e8d9;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin: 0 5px 6px 0;
+    }
+
+
+    /* ---------- footer ---------- */
+
+    .footer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 25px 20px 60px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #6d645a;
+      border-top: 1px solid #e6dccb;
+    }
+
+
+    /* ---------- back to top button (position fixed) ---------- */
+
+    .top-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 38px;
+      height: 38px;
+      line-height: 38px;
+      text-align: center;
+      background-color: #ffffff;
+      border: 1px solid #e6dccb;
+      border-radius: 50%;
+      color: #9a7b4f;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .top-button:hover {
+      background-color: #f1e8d9;
+      text-decoration: none;
+    }
+
+
+    /* ---------- for small screens (mobile) ---------- */
+
+    @media (max-width: 700px) {
+
+      .header {
+        padding: 45px 15px 30px 15px;
+      }
+
+      .header h1 {
+        font-size: 30px;
+      }
+
+      .section {
+        padding: 30px 15px;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .contact-links li {
+        margin: 4px 8px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- top part of the page -->
+  <div class="header" id="top">
+    <p class="small-heading">BBA Digital Business and Entrepreneurship - IIM Bangalore</p>
+    <h1>Dev Maheshkumar Thakkar</h1>
+    <p class="tagline">
+      First year student with an interest in marketing. I want to learn how
+      brands get people's attention and then keep their trust.
+    </p>
+
+    <ul class="contact-links">
+      <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
+      <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
+      <li><a href="tel:+919429830145">+91 94298 30145</a></li>
+      <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
+      <li>Patan, Gujarat</li>
+    </ul>
+  </div>
+
+  <!-- about section -->
+  <div class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am in my first year and first semester of the BBA in Digital Business
+      and Entrepreneurship at IIM Bangalore. Right now I am exploring marketing
+      as my main area of interest. I like that marketing is part storytelling
+      and part data - some brands are remembered and some are just scrolled past.
+    </p>
+    <p>
+      I am also doing a BAMS degree along with this programme, which keeps me
+      busy and has taught me to be disciplined. I am at the beginning of my
+      journey and I prefer to learn slowly and properly instead of claiming
+      things I have not done yet.
+    </p>
+  </div>
+
+  <!-- education section -->
+  <div class="section" id="education">
+    <h2>Education</h2>
+
+    <div class="edu-box">
+      <div class="edu-top">
+        <h3>BBA - Digital Business and Entrepreneurship</h3>
+        <span class="pill">Ongoing</span>
+      </div>
+      <p class="grey-text">Indian Institute of Management Bangalore, Batch 3</p>
+      <p class="grey-text">First year, first semester</p>
+    </div>
+
+    <div class="edu-box">
+      <div class="edu-top">
+        <h3>BAMS - Bachelor of Ayurvedic Medicine and Surgery</h3>
+        <span class="pill">Expected 2031</span>
+      </div>
+      <p class="grey-text">Ananya Medical</p>
+      <p class="grey-text">Doing this degree along with the BBA programme.</p>
+    </div>
+  </div>
+
+  <!-- skills section -->
+  <div class="section" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills">
+
+      <div class="card">
+        <h3>Marketing</h3>
+        <ul>
+          <li class="tag">Marketing basics</li>
+          <li class="tag">Social media</li>
+          <li class="tag">Consumer behaviour</li>
+          <li class="tag">Market research basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Tools</h3>
+        <ul>
+          <li class="tag">MS Excel</li>
+          <li class="tag">MS Word</li>
+          <li class="tag">MS PowerPoint</li>
+          <li class="tag">Canva</li>
+          <li class="tag">Google Workspace</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Technical</h3>
+        <ul>
+          <li class="tag">HTML (learning)</li>
+          <li class="tag">CSS (learning)</li>
+          <li class="tag">GitHub basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li class="tag">Communication</li>
+          <li class="tag">Teamwork</li>
+          <li class="tag">Time management</li>
+          <li class="tag">Willing to learn</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Languages</h3>
+        <ul>
+          <li class="tag">English</li>
+          <li class="tag">Hindi</li>
+          <li class="tag">Gujarati</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Interests</h3>
+        <ul>
+          <li class="tag">Brands and marketing</li>
+          <li class="tag">Investing basics</li>
+          <li class="tag">Current affairs</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- certification section -->
+  <div class="section" id="certifications">
+    <h2>Certification</h2>
+
+    <div class="card">
+      <h3>SEBI Investor Awareness Test</h3>
+      <p class="grey-text">Securities and Exchange Board of India</p>
+      <p>
+        A test about the basics of the securities market and investor awareness.
+      </p>
+    </div>
+  </div>
+
+  <!-- contact section -->
+  <div class="section" id="contact">
+    <h2>Contact</h2>
+    <p class="grey-text">The fastest way to reach me is email.</p>
+
+    <ul class="contact-links contact-links-left">
+      <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
+      <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
+      <li><a href="tel:+919429830145">+91 94298 30145</a></li>
+      <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <p>Dev Maheshkumar Thakkar - Patan, Gujarat - Made with HTML and CSS</p>
+  </div>
+
+  <!-- back to top button -->
+  <a href="#top" class="top-button">^</a>
+
+</body>
+</html>
