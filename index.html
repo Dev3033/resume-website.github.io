@@ -6,14 +6,17 @@
   <title>Dev Thakkar - Resume</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS is written here inside the style tag -->
   <style>
-
     /* ------------------------------
        my resume website stylesheet
        ------------------------------ */
+
+    /* smooth scroll when clicking nav links */
+    html {
+      scroll-behavior: smooth;
+    }
 
     /* body and general text */
     body {
@@ -31,18 +34,14 @@
       margin: 0;
     }
 
-    p {
-      margin: 0 0 10px 0;
-    }
+    p { margin: 0 0 10px 0; }
 
     a {
       color: #9a7b4f;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     ul {
       list-style: none;
@@ -51,14 +50,55 @@
     }
 
 
-    /* ---------- header part ---------- */
+    /* ---------- navigation bar ---------- */
+
+    .navbar {
+      position: sticky;          /* sticks to top when scrolling */
+      top: 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e6dccb;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #2b2723;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      margin-left: 22px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: #6d645a;
+    }
+
+    .nav-links a:hover {
+      color: #9a7b4f;
+      text-decoration: none;
+    }
+
+
+    /* ---------- header / hero ---------- */
 
     .header {
       max-width: 860px;
       margin: 0 auto;
-      padding: 70px 20px 40px 20px;
+      padding: 70px 20px 50px 20px;
       text-align: center;
-      border-bottom: 1px solid #e6dccb;
     }
 
     .small-heading {
@@ -66,26 +106,24 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #9a7b4f;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .header h1 {
-      font-size: 40px;
+      font-size: 44px;
+      line-height: 1.15;
     }
 
     .tagline {
-      max-width: 520px;
-      margin: 15px auto 0 auto;
+      max-width: 540px;
+      margin: 16px auto 0 auto;
       font-weight: 300;
-      font-size: 16px;
+      font-size: 17px;
       color: #6d645a;
     }
 
-
-    /* ---------- contact links (using inline-block) ---------- */
-
     .contact-links {
-      margin-top: 25px;
+      margin-top: 28px;
       font-size: 14px;
       color: #6d645a;
     }
@@ -95,15 +133,13 @@
       margin: 5px 12px;
     }
 
-    .contact-links a {
-      color: #2b2723;
-    }
+    .contact-links a { color: #2b2723; }
 
     .contact-links a:hover {
       color: #9a7b4f;
+      text-decoration: none;
     }
 
-    /* this class moves the contact list to the left in the contact section */
     .contact-links-left {
       text-align: left;
       margin-top: 10px;
@@ -115,16 +151,29 @@
     .section {
       max-width: 860px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
       border-bottom: 1px solid #e6dccb;
+      scroll-margin-top: 70px;   /* so nav bar doesn't cover heading */
     }
 
+    .section:last-of-type { border-bottom: none; }
+
     .section h2 {
-      font-size: 22px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    /* small brown bar before each section heading */
+    .section h2::before {
+      content: "";
       display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 25px;
-      border-bottom: 2px solid #9a7b4f;
+      width: 4px;
+      height: 22px;
+      background-color: #9a7b4f;
+      margin-right: 12px;
+      border-radius: 2px;
     }
 
     .grey-text {
@@ -136,7 +185,12 @@
     /* ---------- education ---------- */
 
     .edu-box {
-      margin-bottom: 25px;
+      background-color: #ffffff;
+      border: 1px solid #e6dccb;
+      border-left: 3px solid #9a7b4f;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
     }
 
     .edu-top {
@@ -144,13 +198,11 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: baseline;
+      gap: 8px;
     }
 
-    .edu-top h3 {
-      font-size: 18px;
-    }
+    .edu-top h3 { font-size: 18px; }
 
-    /* the small label like "Ongoing" */
     .pill {
       display: inline-block;
       background-color: #f1e8d9;
@@ -160,6 +212,7 @@
       letter-spacing: 1px;
       padding: 4px 10px;
       border-radius: 20px;
+      font-weight: 500;
     }
 
 
@@ -175,27 +228,50 @@
       background-color: #ffffff;
       border: 1px solid #e6dccb;
       border-radius: 12px;
-      padding: 18px 20px;
+      padding: 22px 22px;
       width: 31%;
       margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(43, 39, 35, 0.03);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(43, 39, 35, 0.08);
+      transform: translateY(-2px);
     }
 
     .card h3 {
       font-family: 'Inter', Arial, sans-serif;
       font-size: 12px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #9a7b4f;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .tag {
       display: inline-block;
       background-color: #f1e8d9;
       font-size: 13px;
-      padding: 5px 10px;
+      padding: 5px 11px;
       border-radius: 20px;
       margin: 0 5px 6px 0;
+    }
+
+
+    /* ---------- contact card ---------- */
+
+    .contact-box {
+      background-color: #ffffff;
+      border: 1px solid #e6dccb;
+      border-radius: 12px;
+      padding: 28px 30px;
+    }
+
+    .contact-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
 
@@ -204,7 +280,7 @@
     .footer {
       max-width: 860px;
       margin: 0 auto;
-      padding: 25px 20px 60px 20px;
+      padding: 30px 20px 60px 20px;
       text-align: center;
       font-size: 13px;
       color: #6d645a;
@@ -212,22 +288,24 @@
     }
 
 
-    /* ---------- back to top button (position fixed) ---------- */
+    /* ---------- back to top button ---------- */
 
     .top-button {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      width: 38px;
-      height: 38px;
-      line-height: 38px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
       text-align: center;
       background-color: #ffffff;
       border: 1px solid #e6dccb;
       border-radius: 50%;
       color: #9a7b4f;
-      font-size: 15px;
+      font-size: 16px;
       text-decoration: none;
+      box-shadow: 0 4px 12px rgba(43, 39, 35, 0.08);
+      z-index: 100;
     }
 
     .top-button:hover {
@@ -236,36 +314,41 @@
     }
 
 
-    /* ---------- for small screens (mobile) ---------- */
+    /* ---------- mobile ---------- */
 
     @media (max-width: 700px) {
 
-      .header {
-        padding: 45px 15px 30px 15px;
-      }
+      .nav-name { display: none; }
+      .nav-inner { justify-content: center; }
+      .nav-links li { margin: 0 10px; }
 
-      .header h1 {
-        font-size: 30px;
-      }
+      .header { padding: 45px 15px 30px 15px; }
+      .header h1 { font-size: 32px; }
+      .section { padding: 35px 15px; }
 
-      .section {
-        padding: 30px 15px;
-      }
-
-      .card {
-        width: 100%;
-      }
-
-      .contact-links li {
-        margin: 4px 8px;
-      }
+      .card { width: 100%; }
+      .contact-links li { margin: 4px 8px; }
+      .contact-box { padding: 22px 20px; }
     }
 
   </style>
 </head>
 <body>
 
-  <!-- top part of the page -->
+  <!-- navigation bar -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <span class="nav-name">Dev Thakkar</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- header / hero -->
   <div class="header" id="top">
     <p class="small-heading">BBA Digital Business and Entrepreneurship - IIM Bangalore</p>
     <h1>Dev Maheshkumar Thakkar</h1>
@@ -395,7 +478,7 @@
   <div class="section" id="certifications">
     <h2>Certification</h2>
 
-    <div class="card">
+    <div class="card" style="width: 100%;">
       <h3>SEBI Investor Awareness Test</h3>
       <p class="grey-text">Securities and Exchange Board of India</p>
       <p>
@@ -407,15 +490,19 @@
   <!-- contact section -->
   <div class="section" id="contact">
     <h2>Contact</h2>
-    <p class="grey-text">The fastest way to reach me is email.</p>
 
-    <ul class="contact-links contact-links-left">
-      <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
-      <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
-      <li><a href="tel:+919429830145">+91 94298 30145</a></li>
-      <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
-    </ul>
+    <div class="contact-box">
+      <h3>Let's get in touch</h3>
+      <p class="grey-text">The fastest way to reach me is email.</p>
+
+      <ul class="contact-links contact-links-left">
+        <li><a href="mailto:dev.thakkar26@iimb.ac.in">dev.thakkar26@iimb.ac.in</a></li>
+        <li><a href="mailto:devthakkar3033@gmail.com">devthakkar3033@gmail.com</a></li>
+        <li><a href="tel:+919429830145">+91 94298 30145</a></li>
+        <li><a href="https://www.linkedin.com/in/dev-thakkar-9490b4344/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Dev3033" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- footer -->
