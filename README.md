@@ -2,7 +2,7 @@
 
 Resume website built with HTML and CSS for the CSS module mini project.
 
-**Live site:** https://Dev3033.github.io/resume-website/
+**Live site:** [https://Dev3033.github.io/resume-website/](https://dev3033.github.io/resume-website.github.io/)
 **Built with:** HTML5, CSS3 (Flexbox, Grid, sticky positioning, media queries), Google Fonts
 
 ## Files
