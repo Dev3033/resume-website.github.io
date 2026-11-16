@@ -346,18 +346,23 @@
     }
 
 
-    /* ---------- certification ---------- */
+    /* ---------- shared box for hobbies + certification ---------- */
 
-    .cert-card {
+    .info-card {
       background: #fffdf9;
       border: 1px solid #e5d9c4;
       border-radius: 12px;
       padding: 26px 28px;
     }
 
-    .cert-card h3 {
+    .info-card h3 {
       font-size: 19px;
       margin-bottom: 4px;
+    }
+
+    /* chip row used inside the hobbies card */
+    .tag-row {
+      margin-top: 16px;
     }
 
     /* button that opens the certificate PDF */
@@ -515,7 +520,7 @@
 
   </style>
 </head>
-<body>
+<body id="top">
 
   <!-- navigation bar -->
   <div class="navbar">
@@ -644,32 +649,38 @@
           </ul>
         </div>
 
-        <div class="card">
-          <h3>Hobbies &amp; Interests</h3>
-          <ul>
-            <li class="tag">Cricket</li>
-            <li class="tag">Reading</li>
-            <li class="tag">Music</li>
-            <li class="tag">Travelling</li>
-            <li class="tag">Chess</li>
-            <li class="tag">Current affairs</li>
-          </ul>
-        </div>
+      </div>
+    </div>
 
+    <!-- hobbies & interests -->
+    <div class="section" id="hobbies">
+      <h2><span class="num">04</span> Hobbies &amp; Interests</h2>
+
+      <div class="info-card">
+        <h3>Outside academics</h3>
+        <p class="grey-text">What I do when I am not studying.</p>
+        <ul class="tag-row">
+          <li class="tag">Cricket</li>
+          <li class="tag">Reading</li>
+          <li class="tag">Music</li>
+          <li class="tag">Travelling</li>
+          <li class="tag">Chess</li>
+          <li class="tag">Current affairs</li>
+        </ul>
       </div>
     </div>
 
     <!-- certification -->
     <div class="section" id="certifications">
-      <h2><span class="num">04</span> Certification</h2>
+      <h2><span class="num">05</span> Certification</h2>
 
-      <div class="cert-card">
+      <div class="info-card">
         <h3>SEBI Investor Awareness Test</h3>
         <p class="grey-text">Securities and Exchange Board of India</p>
         <p>
           A test about the basics of the securities market and investor awareness.
         </p>
-        <a href="sebi certificate.pdf" target="_blank" rel="noopener" class="cert-link">
+        <a href="sebi-certificate.pdf" target="_blank" rel="noopener" class="cert-link">
           View Certificate &nearr;
         </a>
       </div>
@@ -677,7 +688,7 @@
 
     <!-- contact -->
     <div class="section" id="contact">
-      <h2><span class="num">05</span> Contact</h2>
+      <h2><span class="num">06</span> Contact</h2>
 
       <div class="contact-box">
         <h3>Let's get in touch</h3>
@@ -701,7 +712,7 @@
   </div>
 
   <!-- back to top -->
-  <a href="#" class="top-button">↑</a>
+  <a href="#top" class="top-button">↑</a>
 
 </body>
 </html>
